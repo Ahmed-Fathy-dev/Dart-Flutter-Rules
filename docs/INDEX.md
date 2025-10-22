@@ -38,19 +38,23 @@
 - [Provider](./state-management/provider.md) - `HIGH` `OPTIONAL`
 - [Bloc](./state-management/bloc.md) - `HIGH` `OPTIONAL`
 - [Riverpod](./state-management/riverpod.md) - `HIGH` `OPTIONAL`
-- [Flutter Hooks](./state-management/hooks.md) - `MEDIUM` `OPTIONAL` ✨ NEW!
+- [GetX](./state-management/getx.md) - `MEDIUM` `OPTIONAL` 🔥 NEW!
+- [Flutter Hooks](./state-management/hooks.md) - `MEDIUM` `OPTIONAL`
 - [Comparison Guide](./state-management/comparison.md) - `HIGH` `GUIDE`
 
 ### Navigation
 - [GoRouter](./navigation/go-router.md) - `HIGH` `RECOMMENDED`
-- [GoRouter Builder - Advanced](./navigation/go-router-builder-advanced.md) - `HIGH` `ADVANCED` 🔥 NEW!
+- [GoRouter Builder - Advanced](./navigation/go-router-builder-advanced.md) - `HIGH` `ADVANCED` 🔥
+- [AutoRoute](./navigation/auto-route.md) - `MEDIUM` `ADVANCED` 🔥 NEW!
 - [Navigator](./navigation/navigator.md) - `HIGH` `BASIC`
 - [Deep Linking](./navigation/deep-linking.md) - `HIGH` `ADVANCED`
 
 ### Data & Serialization
 - [JSON Serialization](./data/json-serialization.md) - `HIGH` `RECOMMENDED`
+- [dart_mappable](./data/dart-mappable.md) - `MEDIUM` `ADVANCED` 🔥
 - [HTTP Clients](./data/http-clients.md) - `HIGH` `RECOMMENDED`
 - [Local Storage](./data/local-storage.md) - `HIGH` `RECOMMENDED`
+- [ObjectBox](./data/objectbox.md) - `MEDIUM` `ADVANCED` 🔥 NEW!
 
 ### UI & Components
 - [Material 3 Theming](./ui-design/material3-theming.md) - `HIGH` `RECOMMENDED`
