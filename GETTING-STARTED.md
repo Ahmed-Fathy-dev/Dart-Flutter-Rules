@@ -1,62 +1,145 @@
-# 🚀 دليل البداية الشامل - Flutter/Dart Rules
+# 🚀 Getting Started - Flutter/Dart Remote Rules
+
+**Version:** 4.0.0 - Remote Rules System  
+**Setup Time:** 3 دقائق ⚡  
+**No Files to Copy!** 🎉
+
+---
 
 ## 📋 جدول المحتويات
-1. [نظرة عامة](#overview)
-2. [البداية السريعة](#quick-start)
-3. [أمثلة عملية فورية](#quick-examples)
-4. [اختيار الإعدادات المناسبة](#choosing-settings)
-5. [أمثلة مشاريع كاملة](#project-examples)
+
+1. [ما هو Remote Rules System؟](#what-is-remote)
+2. [البداية السريعة (3 دقائق)](#quick-start)
+3. [اختيار Template المناسب](#choosing-template)
+4. [التخصيص والـ Customization](#customization)
+5. [أمثلة واقعية](#real-examples)
 6. [الأسئلة الشائعة](#faq)
 
 ---
 
-## 🎯 نظرة عامة {#overview}
+## 🌐 ما هو Remote Rules System؟ {#what-is-remote}
 
-### ما هذا النظام؟
+### **الثورة الجديدة في التوثيق!**
 
-نظام شامل لأفضل ممارسات Flutter/Dart محسّن للعمل مع AI Agents (Windsurf + Claude).
+**المشكلة القديمة:**
+```
+❌ نسخ 56 ملف لكل مشروع
+❌ مساحة ضائعة
+❌ Updates صعبة
+❌ ملفات كتير مش محتاجها
+```
 
-### ماذا يوفر لك؟
-- ✅ **49 ملف توثيق شامل** - كل جوانب Flutter
-- ✅ **قواعد منظمة** - مصنفة حسب الأهمية (CRITICAL → LOW)
-- ✅ **إعدادات جاهزة** - Profiles حسب حجم المشروع
-- ✅ **محدّث دائماً** - آخر إصدارات المكتبات (2025)
-- ✅ **مُحسّن للـ AI** - يعمل مباشرة مع Windsurf/Claude
+**الحل الجديد:**
+```
+✅ ملف واحد صغير فقط! (.cascade/rules-manifest.yaml)
+✅ AI يقرأ من GitHub مباشرة 🌐
+✅ اختار بس اللي محتاجه (cherry-pick)
+✅ Updates تلقائية
+✅ Customization سهل جداً
+```
 
-### البنية الأساسية
+### كيف يشتغل؟
 
 ```
-flutter-rules/
-├── START-HERE.md                  # نقطة الانطلاق
-├── GETTING-STARTED.md             # 👈 أنت هنا
-├── WINDSURF-USAGE-GUIDE.md        # دليل Windsurf/Claude
-├── rules-config.yaml               # ملف التكوين الرئيسي
-│
-├── docs/                          # 49 ملف توثيق
-│   ├── INDEX.md                   # الفهرس الكامل
-│   ├── core/                      # القواعد الأساسية
-│   ├── state-management/          # إدارة الحالة
-│   ├── architecture/              # البنية المعمارية
-│   └── ... و 7 فئات أخرى
-│
-└── archive/                       # ملفات مرجعية قديمة
+┌─────────────────┐
+│  Your Project   │
+│                 │
+│  .cascade/      │
+│  └─ manifest    │  ← ملف واحد صغير!
+└────────┬────────┘
+         │
+         │ AI reads manifest
+         │
+         ▼
+┌─────────────────┐
+│    GitHub       │
+│  (This Repo)    │
+│                 │
+│  56 files       │  ← AI fetches from here
+│  17 libraries   │
+│  150+ examples  │
+└─────────────────┘
+```
+
+### المميزات
+
+- ✅ **Zero Installation:** لا داعي لنسخ ملفات
+- ✅ **Always Updated:** دائماً محدث من GitHub
+- ✅ **Context-Aware:** AI يقرأ بس اللي محتاجه
+- ✅ **Customizable:** سهل جداً تخصصه
+- ✅ **Fast Setup:** 3 دقائق فقط
+- ✅ **Works Offline:** مع caching
+
+---
+
+## ⚡ البداية السريعة (3 دقائق) {#quick-start}
+
+### **الطريقة 1: Setup Script** ⭐ (الأسهل)
+
+```bash
+# في مجلد مشروعك
+cd your_flutter_project
+
+# Linux/Mac
+curl -s https://raw.githubusercontent.com/Ahmed-Fathy-dev/Dart-Flutter-Rules/main/tools/setup.sh | bash
+
+# Windows (PowerShell)
+iwr https://raw.githubusercontent.com/Ahmed-Fathy-dev/Dart-Flutter-Rules/main/tools/setup.ps1 | iex
+```
+
+**ماذا سيحدث:**
+1. ✅ ينشئ `.cascade` folder
+2. ✅ يسألك عن نوع المشروع (Minimal/Standard/Full)
+3. ✅ ينزل الـ manifest template المناسب
+4. ✅ يجهز كل شيء تلقائياً
+5. ✅ Done! AI ستقرأ من GitHub تلقائياً 🚀
+
+---
+
+### **الطريقة 2: Manual Setup** (بسيطة)
+
+```bash
+# 1. Create folder structure
+mkdir -p .cascade/cache .cascade/overrides
+
+# 2. Download template (اختار واحد)
+
+# للمشاريع الصغيرة
+curl -o .cascade/rules-manifest.yaml \
+  https://raw.githubusercontent.com/Ahmed-Fathy-dev/Dart-Flutter-Rules/main/templates/manifest-minimal.yaml
+
+# للمشاريع المتوسطة (موصى به) ⭐
+curl -o .cascade/rules-manifest.yaml \
+  https://raw.githubusercontent.com/Ahmed-Fathy-dev/Dart-Flutter-Rules/main/templates/manifest-standard.yaml
+
+# للمشاريع الكبيرة
+curl -o .cascade/rules-manifest.yaml \
+  https://raw.githubusercontent.com/Ahmed-Fathy-dev/Dart-Flutter-Rules/main/templates/manifest-full.yaml
+
+# 3. Customize (اختياري)
+code .cascade/rules-manifest.yaml
+
+# 4. Done! 🎉
 ```
 
 ---
 
-## ⚡ البداية السريعة (3 خطوات) {#quick-start}
+## 🎨 اختيار Template المناسب {#choosing-template}
 
-### **الخطوة 1: حدد نوع مشروعك**
+### **1. Minimal Template** 🟢
 
-اختر الـ Profile المناسب في `rules-config.yaml`:
+**للمشاريع:**
+- Small apps (1-5 screens)
+- Learning Flutter
+- Prototypes & MVPs
+- Personal projects
 
+**يشمل:**
 ```yaml
-profiles:
-  small_project:      # مشروع صغير (1-5 شاشات)
-    enabled: false
-    
-  medium_project:     # مشروع متوسط (5-15 شاشة) ✅ موصى به
-    enabled: true     # فعّل هذا
+- setState (state management)
+- Navigator (basic routing)
+- Basic project structure
+- Dart fundamentals
     
   large_project:      # مشروع كبير (20+ شاشة)
     enabled: false

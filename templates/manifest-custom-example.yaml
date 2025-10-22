@@ -1,0 +1,164 @@
+# Flutter Agent Rules - Custom Template Example
+# Copy this file and modify it to create your own template!
+
+version: 4.0.0
+template: custom
+
+# Remote repository (don't change this)
+remote:
+  url: https://raw.githubusercontent.com/Ahmed-Fathy-dev/Dart-Flutter-Rules
+  branch: main
+  repo: https://github.com/Ahmed-Fathy-dev/Dart-Flutter-Rules
+
+# ═══════════════════════════════════════════════════════════════
+# CUSTOMIZE BELOW - Pick only what you need!
+# ═══════════════════════════════════════════════════════════════
+
+# What to include (customize this!)
+includes:
+  # State Management - Pick one or more
+  state_management:
+    - riverpod          # ✅ Modern & recommended
+    # - bloc            # ⏸️ Skip if not needed
+    # - provider        # ⏸️ Skip if not needed
+    # - getx            # ⏸️ Skip if not needed
+    # - hooks           # ✅ Uncomment if using with Riverpod
+    # - comparison      # ✅ Uncomment to see comparison
+  
+  # Navigation - Pick one or more
+  navigation:
+    - go_router         # ✅ Recommended
+    - go_router_builder_advanced  # ✅ for type-safe
+    # - auto_route      # ⏸️ Skip if using GoRouter
+    # - navigator       # ⏸️ Skip if using GoRouter
+    # - deep-linking    # ✅ Uncomment if needed
+  
+  # Data & Serialization - Pick what you need
+  data:
+    # - json-serialization # ⏸️ Standard
+    - dart-mappable   # ✅ Only if need high performance
+    # - http-clients      # ⏸️ For API calls
+    # - local-storage   # ⏸️ Uncomment if needed
+    # - objectbox       # ⏸️ Only for complex local data
+  
+  # Architecture - Pick one
+  architecture:
+    # - feature-based     # ✅ Recommended
+    # - clean-architecture  # ⏸️ Only for large projects
+    # - project-structure # ✅ Basic structure
+  
+  # UI & Design - Pick what you need
+  ui:
+    - material3-theming      # ✅ Recommended
+    - responsive-design      # ✅ If targeting multiple screens
+    # - layout-best-practices  # ✅ Uncomment if needed
+    # - common-packages        # ✅ Uncomment for UI packages guide
+  
+  # Core Concepts - Usually keep these
+  core:
+    - dart-fundamentals # ✅ Keep
+    - value-equality    # ✅ Keep
+    - error-handling    # ✅ Keep
+    - async-programming  # ✅  if needed
+  
+  # Tools - Pick what you need
+  tools:
+    - build-runner    # ✅ Uncomment if using code generation
+  
+  # Specialized - Pick what you need
+  specialized:
+    # - environment-config  # ✅ Uncomment for env variables
+    # - logging             # ✅ Uncomment for Talker
+    # - testing             # ✅ Uncomment for testing guide
+
+# ═══════════════════════════════════════════════════════════════
+# Priority (what AI reads first)
+# ═══════════════════════════════════════════════════════════════
+
+priority:
+  - architecture/feature-based
+  - state-management/riverpod
+  - navigation/go_router
+  # - data/json-serialization
+  # Add more based on your includes above
+
+# ═══════════════════════════════════════════════════════════════
+# AI Instructions (customize for your project!)
+# ═══════════════════════════════════════════════════════════════
+
+ai_instructions: |
+  Custom project setup.
+  
+  Project Type: [Describe your project type]
+  Example: E-commerce mobile app with offline support
+  
+  Architecture:
+  - Use feature-based architecture
+  - [Add your architecture rules]
+  
+  State Management:
+  - Use Riverpod with code generation
+  - [Add your state management rules]
+  
+  Navigation:
+  - Use GoRouter
+  - [Add your navigation rules]
+  
+  Data:
+  - Use JSON serialization for API
+  - [Add your data rules]
+  
+  Special Requirements:
+  - [List any special requirements]
+  - [Custom conventions]
+  - [Team preferences]
+
+# ═══════════════════════════════════════════════════════════════
+# Excluded (what NOT to use)
+# ═══════════════════════════════════════════════════════════════
+
+excludes:
+  - getx              # Not using GetX
+  - bloc            # Add if not using
+  # Add more based on your preferences
+
+# ═══════════════════════════════════════════════════════════════
+# Caching
+# ═══════════════════════════════════════════════════════════════
+
+cache:
+  enabled: true
+  ttl: 86400  # 24 hours
+  path: .cascade/cache/
+
+# ═══════════════════════════════════════════════════════════════
+# Custom overrides (optional)
+# ═══════════════════════════════════════════════════════════════
+
+overrides:
+  enabled: true
+  path: .cascade/overrides/
+
+# ═══════════════════════════════════════════════════════════════
+# Advanced Options
+# ═══════════════════════════════════════════════════════════════
+
+advanced:
+  fetch_depth: 1
+  auto_update: true
+  update_interval: 86400
+  offline_fallback: true
+
+# ═══════════════════════════════════════════════════════════════
+# Template Metadata (for documentation)
+# ═══════════════════════════════════════════════════════════════
+
+metadata:
+  name: "My Custom Template"
+  description: "Custom template for [your use case]"
+  author: "Your Name"
+  created: "2025-10-22"
+  use_case: "Describe when to use this template"
+  project_examples:
+    - "Example project 1"
+    - "Example project 2"

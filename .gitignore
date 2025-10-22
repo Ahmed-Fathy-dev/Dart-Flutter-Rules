@@ -22,3 +22,11 @@ archive/DECISION-GUIDE.md
 archive/GITHUB-README.md
 archive/PACKAGES-INDEX.md
 archive/WINDSURF-USAGE-GUIDE.md
+archive/rules-config-old.yaml
+
+# Legacy files
+rules-config-LEGACY.yaml
+
+# User project files (example)
+.cascade/
+!.cascade/.gitkeep

@@ -1,0 +1,58 @@
+# Flutter Agent Rules - Minimal Manifest
+# For small projects with basic needs
+
+version: 4.0.0
+template: minimal
+
+# Remote repository (reads from GitHub)
+remote:
+  url: https://raw.githubusercontent.com/Ahmed-Fathy-dev/Dart-Flutter-Rules
+  branch: main
+  repo: https://github.com/Ahmed-Fathy-dev/Dart-Flutter-Rules
+
+# What to include (minimal setup)
+includes:
+  # State Management - Pick ONE
+  state_management:
+    - built-in          # ✅ Use setState (simplest)
+    # - riverpod        # Alternative: Riverpod
+    # - provider        # Alternative: Provider
+  
+  # Navigation - Pick ONE
+  navigation:
+    - navigator         # ✅ Basic Navigator
+    # - go_router       # Alternative: GoRouter
+  
+  # Architecture
+  architecture:
+    - project_structure # ✅ Basic structure
+  
+  # Core Concepts
+  core:
+    - dart-fundamentals # ✅ Dart basics
+    - value-equality    # ✅ Equality
+
+# Priority (what AI reads first)
+priority:
+  - core/dart-fundamentals
+  - architecture/project-structure
+  - state-management/built-in
+  - navigation/navigator
+
+# AI Instructions
+ai_instructions: |
+  This is a MINIMAL setup for small Flutter projects.
+  - Use built-in state management (setState)
+  - Use basic Navigator for routing
+  - Keep it simple and straightforward
+
+# Caching
+cache:
+  enabled: true
+  ttl: 86400  # 24 hours
+  path: .cascade/cache/
+
+# Custom overrides (optional)
+overrides:
+  enabled: false
+  path: .cascade/overrides/

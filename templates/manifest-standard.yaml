@@ -1,0 +1,92 @@
+# Flutter Agent Rules - Standard Manifest
+# For medium-sized projects with modern architecture
+
+version: 4.0.0
+template: standard
+
+# Remote repository (reads from GitHub)
+remote:
+  url: https://raw.githubusercontent.com/Ahmed-Fathy-dev/Dart-Flutter-Rules
+  branch: main
+  repo: https://github.com/Ahmed-Fathy-dev/Dart-Flutter-Rules
+
+# What to include (standard setup)
+includes:
+  # State Management
+  state_management:
+    - riverpod          # ✅ Recommended
+    - comparison        # ✅ Comparison guide
+  
+  # Navigation
+  navigation:
+    - go_router         # ✅ Recommended
+    - deep-linking      # ✅ Deep linking
+  
+  # Data & Serialization
+  data:
+    - json-serialization # ✅ JSON handling
+    - http-clients       # ✅ Dio for HTTP
+    - local-storage      # ✅ Local storage
+  
+  # Architecture
+  architecture:
+    - feature-based      # ✅ Feature-first
+    - project-structure  # ✅ Structure
+  
+  # UI
+  ui:
+    - material3-theming  # ✅ Material 3
+    - responsive-design  # ✅ Responsive
+    - layout-best-practices # ✅ Layouts
+  
+  # Core
+  core:
+    - dart-fundamentals  # ✅ Dart basics
+    - value-equality     # ✅ Equality
+    - error-handling     # ✅ Errors
+
+# Priority (what AI reads first)
+priority:
+  - architecture/feature-based
+  - state-management/riverpod
+  - navigation/go_router
+  - data/json-serialization
+  - ui/material3-theming
+
+# AI Instructions
+ai_instructions: |
+  This is a STANDARD setup for modern Flutter projects.
+  
+  Architecture:
+  - Use feature-based architecture
+  - Separate by features, not layers
+  
+  State Management:
+  - Use Riverpod (recommended)
+  - Use code generation (@riverpod)
+  
+  Navigation:
+  - Use GoRouter for type-safe routing
+  - Support deep linking
+  
+  Data:
+  - Use json_serializable for JSON
+  - Use Dio for HTTP requests
+  - Use appropriate local storage
+
+# Excluded (not needed for standard projects)
+excludes:
+  - getx               # Too opinionated
+  - auto_route         # GoRouter is simpler
+  - objectbox          # Hive/SharedPreferences enough
+
+# Caching
+cache:
+  enabled: true
+  ttl: 86400  # 24 hours
+  path: .cascade/cache/
+
+# Custom overrides (optional)
+overrides:
+  enabled: true
+  path: .cascade/overrides/
