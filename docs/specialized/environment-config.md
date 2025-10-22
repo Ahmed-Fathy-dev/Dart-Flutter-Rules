@@ -45,11 +45,11 @@ ai_agent_tags:
 #### pubspec.yaml
 ```yaml
 dependencies:
-  envied: ^1.1.0  # ✅ Latest (2025-10-22)
+  envied: ^1.3.1  # ✅ Latest (Aug 2025)
 
 dev_dependencies:
-  build_runner: ^2.4.15
-  envied_generator: ^1.1.0  # ✅ Latest
+  build_runner: ^2.10.0  # ✅ Latest (Aug 2025)
+  envied_generator: ^1.3.1  # ✅ Latest (Aug 2025)
 ```
 
 ---

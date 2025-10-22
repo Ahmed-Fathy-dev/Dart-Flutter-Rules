@@ -45,7 +45,7 @@ ai_agent_tags:
 #### pubspec.yaml
 ```yaml
 dependencies:
-  dio: ^5.9.0  # ✅ Updated to latest
+  dio: ^5.9.0  # ✅ Latest stable (Aug 2025)
 ```
 
 #### Basic Client

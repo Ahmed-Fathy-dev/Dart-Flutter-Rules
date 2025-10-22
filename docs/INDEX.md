@@ -43,6 +43,7 @@
 
 ### Navigation
 - [GoRouter](./navigation/go-router.md) - `HIGH` `RECOMMENDED`
+- [GoRouter Builder - Advanced](./navigation/go-router-builder-advanced.md) - `HIGH` `ADVANCED` 🔥 NEW!
 - [Navigator](./navigation/navigator.md) - `HIGH` `BASIC`
 - [Deep Linking](./navigation/deep-linking.md) - `HIGH` `ADVANCED`
 

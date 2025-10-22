@@ -46,14 +46,20 @@ ai_agent_tags:
 #### pubspec.yaml
 ```yaml
 dependencies:
-  go_router: ^16.2.5  # ✅ Updated to latest (Major update!)
+  go_router: ^16.2.5  # ✅ Latest (Aug 2025)
+
+dev_dependencies:
+  go_router_builder: ^4.1.1  # ✅ Type-safe routes (Aug 2025)
+  build_runner: ^2.10.0  # ✅ For code generation
 ```
 
 > ⚠️ **Breaking Change:** GoRouter 16.x includes significant changes from 12.x
 > - Shell routes API improved
 > - Better deep linking support
-> - Requires Flutter SDK ≥3.27 / Dart ≥3.6
+> - Requires Flutter SDK ≥3.29 / Dart ≥3.7
 > - Check changelog: https://pub.dev/packages/go_router/changelog
+
+> 💡 **Tip:** Use `go_router_builder` for type-safe, generated routes with compile-time safety
 
 #### Basic Router
 ```dart
@@ -699,6 +705,92 @@ enforce:
 
 ---
 
+### 8. Type-Safe Routes with go_router_builder 🔥
+
+استخدم `go_router_builder` للحصول على type-safe routes مع compile-time safety.
+
+#### Setup
+```yaml
+dev_dependencies:
+  go_router_builder: ^4.1.1
+  build_runner: ^2.10.0
+```
+
+#### Define Routes
+```dart
+import 'package:go_router/go_router.dart';
+
+part 'app_router.g.dart';
+
+@TypedGoRoute<HomeRoute>(path: '/')
+class HomeRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return HomeScreen();
+  }
+}
+
+@TypedGoRoute<UserRoute>(path: '/user/:id')
+class UserRoute extends GoRouteData {
+  final int id;
+  
+  const UserRoute({required this.id});
+  
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return UserScreen(userId: id);
+  }
+}
+
+@TypedGoRoute<ProductRoute>(path: '/product/:id')
+class ProductRoute extends GoRouteData {
+  final String id;
+  final String? category; // Query parameter
+  
+  const ProductRoute({required this.id, this.category});
+  
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return ProductScreen(
+      productId: id,
+      category: category,
+    );
+  }
+}
+```
+
+#### Generate Code
+```bash
+dart run build_runner build --delete-conflicting-outputs
+```
+
+#### Router Configuration
+```dart
+final router = GoRouter(
+  routes: $appRoutes, // Generated routes
+);
+```
+
+#### Type-Safe Navigation
+```dart
+// ✅ Type-safe - compile-time errors
+const HomeRoute().go(context);
+const UserRoute(id: 123).push(context);
+ProductRoute(id: '456', category: 'electronics').go(context);
+
+// ❌ This won't compile - type safety!
+// UserRoute(id: 'invalid'); // Error: String not assignable to int
+```
+
+#### Benefits
+- ✅ **Compile-time safety** - No runtime errors
+- 🎯 **Auto-completion** - IDE support
+- 📝 **Less boilerplate** - No manual string paths
+- 🔄 **Refactoring-friendly** - Rename safely
+- 🐛 **Catch errors early** - Before runtime
+
+---
+
 ## 📊 Summary Checklist
 
 ```markdown
@@ -708,7 +800,7 @@ enforce:
 - [ ] Redirects for auth
 - [ ] Error handling
 - [ ] ShellRoute for persistent UI
-- [ ] Type-safe navigation
+- [ ] Type-safe navigation with go_router_builder ⭐
 - [ ] Tests for navigation
 ```
 
@@ -716,6 +808,7 @@ enforce:
 
 ## 🔗 Related Rules
 
+- [GoRouter Builder - Advanced Examples](./go-router-builder-advanced.md) - 🔥 **Type-Safe Routes**
 - [Navigator](./navigator.md) - Alternative
 - [Deep Linking](./deep-linking.md) - Advanced
 - [Testing](../testing/widget-testing.md)
@@ -725,5 +818,5 @@ enforce:
 **Priority:** 🟡 HIGH  
 **Level:** RECOMMENDED  
 **Officially Recommended:** ✅  
-**Last Updated:** 2025-10-21  
-**Version:** 1.0.0
+**Last Updated:** 2025-10-22  
+**Version:** 1.1.0 - Added go_router_builder support

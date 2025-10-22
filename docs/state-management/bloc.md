@@ -10,6 +10,7 @@ applies_to:
   - medium_to_large_projects
 project_size: 15+ screens
 complexity: medium_to_high
+version: 9.1.0+  # ✅ Updated (Aug 2025)
 ai_agent_tags:
   - state-management
   - bloc
@@ -82,11 +83,12 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
 #### pubspec.yaml
 ```yaml
 dependencies:
-  flutter_bloc: ^9.1.1  # ✅ Updated to latest
-  equatable: ^2.0.0  # للمقارنة
+  flutter_bloc: ^9.1.1  # ✅ Latest (Aug 2025)
+  bloc: ^9.1.0  # ✅ Latest (Aug 2025)
+  equatable: ^2.0.7  # ✅ Latest (Aug 2025)
 
 dev_dependencies:
-  bloc_test: ^9.1.7  # ✅ Updated to latest
+  bloc_test: ^9.1.7  # ✅ Latest (Aug 2025)
 ```
 
 #### Basic Bloc

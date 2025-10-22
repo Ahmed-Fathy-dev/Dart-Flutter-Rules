@@ -21,8 +21,8 @@ project:
 
 # إعدادات البيئة
 environment:
-  dart_sdk: ">=3.0.0 <4.0.0"
-  flutter_sdk: ">=3.10.0"
+  dart_sdk: ">=3.9.2 <4.0.0"  # ✅ Updated to Dart 3.9.2 (Latest Stable - Aug 2025)
+  flutter_sdk: ">=3.35.0"  # ✅ Updated to Flutter 3.35.0 (Latest Stable - Aug 2025)
   platforms:
     android: true
     ios: true
@@ -141,12 +141,12 @@ state_management:
   primary: built-in  # Options: built-in, provider, bloc, riverpod, getx
   allow_multiple: false  # السماح باستخدام أكثر من حل
   
-  # Flutter Hooks  # ✅ NEW! (2025-10-22)
+  # Flutter Hooks  # ✅ UPDATED! (2025-10-22)
   hooks:
     enabled: false  # Enable for React-style hooks
-    version: "^0.21.2"
+    version: "^0.21.3"  # ✅ Updated to 0.21.3 (Latest - Aug 2025)
     use_with: riverpod  # Options: riverpod, standalone
-    hooks_riverpod_version: "^2.6.1"
+    hooks_riverpod_version: "^3.0.3"  # ✅ Latest stable
     features:
       less_boilerplate: true
       auto_cleanup: true
@@ -167,7 +167,7 @@ state_management:
   # Provider (third-party)
   provider:
     enabled: false
-    version: "^6.0.0"
+    version: "^6.1.5"  # ✅ Updated to 6.1.5 (Latest - Jan 2025)
     use_cases:
       - dependency_injection
       - complex_state
@@ -175,19 +175,24 @@ state_management:
   # Bloc (third-party)
   bloc:
     enabled: false
-    version: "^8.0.0"
+    version: "^9.1.0"  # ✅ Updated to 9.1.0 (Latest - Jan 2025)
+    flutter_bloc_version: "^9.1.1"  # ✅ Updated to 9.1.1 (Latest)
     use_cubit: true  # استخدم Cubit للحالات البسيطة
     
-  # Riverpod (third-party)
+  # Riverpod (third-party)  # ✅ MAJOR UPDATE!
   riverpod:
     enabled: false
-    version: "^2.0.0"
-    use_code_generation: false
+    version: "^3.0.3"  # ✅ Latest stable (Aug 2025)
+    flutter_riverpod_version: "^3.0.3"  # ✅ Latest stable (Aug 2025)
+    riverpod_annotation_version: "^3.0.3"  # ✅ Updated to 3.0.3 (Aug 2025)
+    riverpod_generator_version: "^3.0.3"  # ✅ Updated to 3.0.3 (Aug 2025)
+    riverpod_lint_version: "^3.0.3"  # ✅ Updated to 3.0.3 (Aug 2025)
+    use_code_generation: true  # ✅ Recommended (code generation)
     
   # GetX (third-party)
   getx:
     enabled: false
-    version: "^4.0.0"
+    version: "^4.7.2"  # ✅ Updated to 4.7.2 (Latest - Aug 2025)
     use_for: []  # Options: state, routing, dependency_injection
 
 # ═══════════════════════════════════════════════════════════════
@@ -199,7 +204,9 @@ navigation:
   # GoRouter (موصى به)
   go_router:
     enabled: true
-    version: "^13.0.0"
+    version: "^16.2.5"  # ✅ Latest stable (Aug 2025)
+    go_router_builder_version: "^4.1.1"  # ✅ Type-safe routes (Aug 2025)
+    use_code_generation: true  # ✅ Recommended for type-safe routes
     features:
       deep_linking: true
       web_support: true
@@ -210,7 +217,7 @@ navigation:
   # AutoRoute
   auto_route:
     enabled: false
-    version: "^7.0.0"
+    version: "^10.2.0"  # ✅ Updated to 10.2.0 (Latest - Aug 2025)
     use_code_generation: true
     
   # Navigator (built-in)
@@ -227,12 +234,12 @@ data:
     method: json_serializable  # Options: json_serializable, dart_mappable, freezed, built_value, manual
     json_serializable:
       enabled: true
-      version: "^6.9.2"  # ✅ Updated (2025-10-22)
+      version: "^6.11.1"  # ✅ Updated to 6.11.1 (Latest - Aug 2025)
       field_rename: snake  # تحويل camelCase إلى snake_case
       explicit_to_json: true
-    dart_mappable:  # ✅ NEW! (2025-10-22)
+    dart_mappable:  # ✅ UPDATED! (2025-10-22)
       enabled: false  # Enable if you want better performance & features
-      version: "^4.4.0"
+      version: "^4.6.1"  # ✅ Updated to 4.6.1 (Latest - Aug 2025)
       features:
         polymorphism: true  # دعم كامل للـ inheritance
         copy_with: true  # Auto-generated copyWith
@@ -242,14 +249,15 @@ data:
         - performance_critical  # للأداء العالي
     freezed:
       enabled: false
-      version: "^2.0.0"
+      version: "^3.2.3"  # ✅ Updated to 3.2.3 (Latest - Aug 2025)
+      freezed_annotation_version: "^2.4.4"  # ✅ Latest
       use_with_json_serializable: false
       
   # HTTP Clients
   http_client: dio  # Options: dio, http, retrofit
   dio:
     enabled: true
-    version: "^5.9.0"  # ✅ Updated (2025-10-22)
+    version: "^5.9.0"  # ✅ Latest stable (Aug 2025)
     features:
       interceptors: true
       timeout: 30000  # milliseconds
@@ -267,7 +275,7 @@ data:
     
     objectbox:  # ✅ NEW! (2025-10-22)
       enabled: false  # Enable for ultra-fast database (10x faster than Hive)
-      version: "^4.3.0"
+      version: "^5.0.0"  # ✅ Updated to 5.0.0 (Latest - Aug 2025)
       features:
         relations: true  # Native relations support
         queries: true  # Powerful query API
@@ -288,7 +296,7 @@ data:
   equality:
     equatable:
       enabled: false  # Enable for easy value equality
-      version: "^2.0.7"
+      version: "^2.0.7"  # ✅ Latest stable (Aug 2025)
       use_for:
         - models  # جميع الـ models
         - state_classes  # State management classes
@@ -444,7 +452,7 @@ tools:
   code_generation:
     enabled: true
     build_runner:
-      version: "^2.0.0"
+      version: "^2.10.0"  # ✅ Updated to 2.10.0 (Latest - Aug 2025)
       delete_conflicting_outputs: true
     watch_mode: false  # للتطوير السريع
     
@@ -524,15 +532,14 @@ security:
     
     envied:  # ✅ NEW! (2025-10-22)
       enabled: false  # Enable for compile-time obfuscation
-      version: "^1.1.0"
+      version: "^1.3.1"  # ✅ Updated to 1.3.1 (Latest - Aug 2025)
       features:
         obfuscation: true  # Compile-time obfuscation
         type_safe: true  # Type-safe access
         multi_environment: true  # dev/prod environments
       use_for:
-        - production  # موصى به للـ production
         - sensitive_data  # API keys, secrets
-        - ci_cd: true  # Integration with CI/CD
+        - ci_cd  # Integration with CI/CD
     
   # Data Security
   data:
@@ -559,7 +566,7 @@ logging:
   
   talker:  # ✅ NEW! (2025-10-22)
     enabled: false  # Enable for professional logging
-    version: "^4.6.4"
+    version: "^5.0.2"  # ✅ Updated to 5.0.2 (Latest - Aug 2025)
     features:
       flutter_integration: true  # In-app logs viewer
       dio_logger: false  # HTTP logs

@@ -46,8 +46,8 @@ ai_agent_tags:
 #### pubspec.yaml
 ```yaml
 dependencies:
-  flutter_hooks: ^0.21.2  # ✅ Latest (2025-10-22)
-  hooks_riverpod: ^2.6.1  # Riverpod + Hooks integration
+  flutter_hooks: ^0.21.3  # ✅ Latest (Aug 2025)
+  hooks_riverpod: ^3.0.3  # ✅ Latest - Riverpod 3.0 + Hooks (Aug 2025)
 ```
 
 ---

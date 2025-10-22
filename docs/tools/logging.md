@@ -46,12 +46,12 @@ ai_agent_tags:
 #### pubspec.yaml
 ```yaml
 dependencies:
-  talker: ^4.6.4  # ✅ Latest version (2025-10-22)
-  talker_flutter: ^4.6.4  # For Flutter UI
+  talker: ^5.0.2  # ✅ Latest (Aug 2025)
+  talker_flutter: ^5.0.2  # ✅ For Flutter UI
   
   # Optional integrations
-  talker_riverpod_logger: ^4.6.4  # Riverpod integration
-  talker_dio_logger: ^4.6.4  # Dio integration
+  talker_riverpod_logger: ^5.0.2  # ✅ Riverpod integration
+  talker_dio_logger: ^5.0.2  # ✅ Dio integration
 ```
 
 ---

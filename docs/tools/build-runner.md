@@ -42,11 +42,11 @@ ai_agent_tags:
 
 ```yaml
 dependencies:
-  json_annotation: ^4.9.0  # ✅ Updated
+  json_annotation: ^4.9.0  # ✅ Latest (Aug 2025)
 
 dev_dependencies:
-  build_runner: ^2.4.15  # ✅ Updated (2025-10-22)
-  json_serializable: ^6.9.2  # ✅ Updated
+  build_runner: ^2.10.0  # ✅ Latest (Aug 2025)
+  json_serializable: ^6.11.1  # ✅ Latest (Aug 2025)
 ```
 
 ---
