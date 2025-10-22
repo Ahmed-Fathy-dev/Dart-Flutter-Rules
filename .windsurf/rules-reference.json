@@ -1,0 +1,19 @@
+{
+  "flutter_rules": {
+    "type": "git_submodule",
+    "path": ".flutter-rules",
+    "repo": "https://github.com/Ahmed-Fathy-dev/Dart-Flutter-Rules",
+    "auto_update": true,
+    "ai_integration": {
+      "enabled": true,
+      "read_docs": true,
+      "apply_rules": true,
+      "config_file": ".flutter-rules/rules-config.yaml"
+    },
+    "usage": {
+      "index": ".flutter-rules/docs/INDEX.md",
+      "packages": ".flutter-rules/PACKAGES-INDEX.md",
+      "start": ".flutter-rules/START-HERE.md"
+    }
+  }
+}
